@@ -20,18 +20,18 @@ interface InputProps {
 
 interface GroupProps {
   allowedValues?: any
-  checkboxes?: any
-  id?: any
+  checkboxes?: string[]
+  id?: string
   layout?: 'horizontal' | 'vertical'
-  error?: any
-  descriptionText?: any
-  label?: any
-  labelOptional?: any
-  name?: any
-  type?: any
+  error?: string
+  descriptionText?: string
+  label?: string
+  labelOptional?: string
+  name?: string
+  type?: 'cards' | 'default'
   transform?: any
-  value?: any
-  className?: any
+  value?: string
+  className?: string
   children?: React.ReactNode
   options?: Array<InputProps>
   onChange?(x: React.ChangeEvent<HTMLInputElement>): void
@@ -47,7 +47,7 @@ function RadioGroup({
   labelOptional,
   children,
   className,
-  type,
+  type = 'default',
   options,
   value,
   name,
